@@ -63,7 +63,7 @@ const submitReview = () => {
               variant="solid"
               block
               label="Enviar reseña"
-              :disabled="!reviewText || rating === 0"
+              :disabled="!reviewText && rating === 0"
               @click="submitReview"
             />
           </div>
