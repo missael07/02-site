@@ -10,7 +10,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
   active: route.path.startsWith('/products')
 }, {
   label: 'Precios',
-  to: '/prices',
+  to: '/pricing',
 //   icon: 'i-lucide-box',
   active: route.path.startsWith('/prices')
 }, {
