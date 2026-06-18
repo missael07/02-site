@@ -9,6 +9,16 @@ export default defineNuxtConfig({
         '@vue/devtools-kit',
       ]
     }
-  }
+  },
+
+  css: [
+    '@/assets/css/main.css',
+  ],
+
+  modules: [
+    '@nuxt/devtools',
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+  ],
 
 })
