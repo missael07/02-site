@@ -5,9 +5,12 @@ defineProps<{
 const reviewText = ref('');
 const rating = ref(0);
 const isOpen = ref(false);
+
+const toast = useToast()
 const submitReview = () => {
   console.log('submitReview');
   isOpen.value = false;
+  toast.add({ title: 'Reseña enviada', description: 'Tu reseña ha sido enviada.', color: 'success' })
 };
 </script>
 
