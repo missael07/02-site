@@ -6,6 +6,6 @@
         <main class="container mx-auto flex-1 mt-2">
             <slot />
         </main>
-        <ShareFooter />
+        <ShareFooter class="mt-10"/>
     </div>
 </template>
