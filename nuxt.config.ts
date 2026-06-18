@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@nuxt/devtools',
     '@nuxt/eslint',
     '@nuxt/fonts',
+    '@nuxt/ui'
   ],
 
   app: {
@@ -27,6 +28,19 @@ export default defineNuxtConfig({
       meta: [
         { name: 'description', content: 'Tienda Online' }
       ],
+    }
+  },
+
+  nitro: {
+    prerender: {
+      routes: [
+        '/', '/about', '/contact', '/products', '/pricing',
+      ],
+      ignore: [
+        '/dashboard',
+        '/dashboard/**',
+      ],
+      crawlLinks: true,
     }
   }
 
