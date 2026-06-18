@@ -21,4 +21,13 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
   ],
 
+  app: {
+    head: {
+      title: 'Tienda Online',
+      meta: [
+        { name: 'description', content: 'Tienda Online' }
+      ],
+    }
+  }
+
 })
