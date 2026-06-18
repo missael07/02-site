@@ -1,5 +1,5 @@
 <template>
-  <UMarquee>
+  <UMarquee class="my-10">
     <UIcon name="i-simple-icons-github" class="size-10 shrink-0" />
     <UIcon name="i-simple-icons-discord" class="size-10 shrink-0" />
     <UIcon name="i-simple-icons-x" class="size-10 shrink-0" />
