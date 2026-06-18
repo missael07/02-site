@@ -1,7 +1,13 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+@theme {
+  --font-sans: 'Raleway', sans-serif;
+}
 
+:root {
+  --ui-radius: 0.5rem;
+}
 /* body {
   font-family: 'Roboto', sans-serif;
   background-color: #020420;

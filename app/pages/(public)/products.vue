@@ -12,7 +12,13 @@
 <template>
   <div>
     Page: products
+
   </div>
+
+
+    <UButton color="primary" label="Primary" />
+    <UButton color="secondary" label="Secondary" />
+
 </template>
 
 <style scoped></style>
