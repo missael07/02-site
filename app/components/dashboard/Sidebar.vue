@@ -1,9 +1,8 @@
 <script setup lang="ts">
-// https://ui.nuxt.com/docs/components/dashboard-sidebar
-import {
-  type CommandPaletteGroup,
-  type CommandPaletteItem,
-  type NavigationMenuItem,
+import type {
+   CommandPaletteGroup,
+  CommandPaletteItem,
+   NavigationMenuItem,
 } from '@nuxt/ui';
 const items: NavigationMenuItem[][] = [
   [
