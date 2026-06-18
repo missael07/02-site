@@ -45,6 +45,12 @@ const cards = ref([
 </script>
 
 <template>
+
+<UPageSection  
+    title="Features"
+    description="Nuxt UI is a collection of essential UI components and utilities for building Nuxt applications. It provides a solid foundation for your projects, allowing you to focus on building unique features and experiences without worrying about the underlying infrastructure."
+    headline="Discover the power of Nuxt UI and its seamless integration with Nuxt's ecosystem of modules and tools, designed to enhance your development experience and help you create stunning applications with ease."
+/>
   <UPageGrid>
     <UPageCard
       v-for="(card, index) in cards"
