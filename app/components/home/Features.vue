@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const cards = ref([
   {
-    title: 'Theme',
-    description: 'Learn how to customize Nuxt UI components using Tailwind CSS.',
+    title: 'Tema',
+    description: 'Aprende a personalizar los componentes de Nuxt UI usando Tailwind CSS.',
     icon: 'i-lucide-swatch-book',
     // to: '/docs/getting-started/theme/design-system',
     class: 'lg:col-span-2',
@@ -14,22 +14,22 @@ const cards = ref([
     orientation: 'horizontal' as const
   },
   {
-    title: 'Fonts',
-    description: 'Nuxt UI integrates with Nuxt Fonts to provide plug-and-play font optimization.',
+    title: 'Fuentes',
+    description: 'Nuxt UI se integra con Nuxt Fonts para ofrecer optimización de fuentes plug-and-play.',
     icon: 'i-lucide-a-large-small',
     // to: '/docs/getting-started/integrations/fonts',
     variant: 'soft' as const
   },
   {
-    title: 'Color Mode',
-    description: 'Nuxt UI integrates with Nuxt Color Mode to switch between light and dark.',
+    title: 'Modo de color',
+    description: 'Nuxt UI se integra con Nuxt Color Mode para cambiar entre claro y oscuro.',
     icon: 'i-lucide-sun-moon',
     // to: '/docs/getting-started/integrations/color-mode',
     variant: 'soft' as const
   },
   {
-    title: 'Icons',
-    description: 'Nuxt UI integrates with Nuxt Icon to access over 200,000+ icons from Iconify.',
+    title: 'Iconos',
+    description: 'Nuxt UI se integra con Nuxt Icon para acceder a más de 200,000 iconos de Iconify.',
     icon: 'i-lucide-smile',
     // to: '/docs/getting-started/integrations/icons',
     image: {
@@ -47,9 +47,9 @@ const cards = ref([
 <template>
 
 <UPageSection  
-    title="Features"
-    description="Nuxt UI is a collection of essential UI components and utilities for building Nuxt applications. It provides a solid foundation for your projects, allowing you to focus on building unique features and experiences without worrying about the underlying infrastructure."
-    headline="Discover the power of Nuxt UI and its seamless integration with Nuxt's ecosystem of modules and tools, designed to enhance your development experience and help you create stunning applications with ease."
+    title="Características"
+    description="Nuxt UI es una colección de componentes UI esenciales y utilidades para construir aplicaciones Nuxt. Proporciona una base sólida para tus proyectos, permitiéndote enfocarte en crear características y experiencias únicas sin preocuparte por la infraestructura subyacente."
+    headline="Descubre el poder de Nuxt UI y su integración fluida con el ecosistema de módulos y herramientas de Nuxt, diseñadas para mejorar tu experiencia de desarrollo y ayudarte a crear aplicaciones impresionantes con facilidad."
 />
   <UPageGrid>
     <UPageCard

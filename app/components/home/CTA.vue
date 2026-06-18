@@ -3,11 +3,11 @@ import type { ButtonProps } from '@nuxt/ui'
 
 const links = ref<ButtonProps[]>([
   {
-    label: 'Get started',
+    label: 'Comenzar',
     color: 'neutral'
   },
   {
-    label: 'Learn more',
+    label: 'Más información',
     color: 'neutral',
     variant: 'subtle',
     trailingIcon: 'i-lucide-arrow-right'
@@ -17,8 +17,8 @@ const links = ref<ButtonProps[]>([
 
 <template>
   <UPageCTA
-    title="Trusted and supported by our amazing community"
-    description="We've built a strong, lasting partnership. Their trust is our driving force, propelling us towards shared success."
+    title="Confiado y apoyado por nuestra increíble comunidad"
+    description="Hemos construido una alianza sólida y duradera. Su confianza es nuestra fuerza impulsora, que nos mueve hacia el éxito compartido."
     orientation="horizontal"
     :links="links"
   >
@@ -26,7 +26,7 @@ const links = ref<ButtonProps[]>([
       src="https://picsum.photos/640/728"
       width="320"
       height="364"
-      alt="Illustration"
+      alt="Ilustración"
       class="w-full rounded-lg"
       loading="lazy"
     />

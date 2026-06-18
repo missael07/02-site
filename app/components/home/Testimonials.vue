@@ -3,134 +3,134 @@ const testimonials = ref([
   {
     user: {
       name: 'Evan You',
-      description: 'Author of Vue.js and Vite',
+      description: 'Autor de Vue.js y Vite',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/499550?v=4',
         alt: 'Evan You',
         loading: 'lazy' as const
       }
     },
-    quote: 'Nuxt on Cloudflare infra with minimal effort - this is huge!'
+    quote: 'Nuxt en la infraestructura de Cloudflare con un esfuerzo mínimo: ¡esto es enorme!'
   },
   {
     user: {
       name: 'Igor Minar',
-      description: 'Software Engineer at Cloudflare',
+      description: 'Ingeniero de software en Cloudflare',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/216296?v=4',
         alt: 'Igor Minar',
         loading: 'lazy' as const
       }
     },
-    quote: 'I love the polish and the batteries-included approach. NuxtHub takes web framework and hosting integration to a new level!'
+    quote: 'Me encanta el pulido y el enfoque con todo incluido. ¡NuxtHub lleva la integración de framework web y hosting a un nuevo nivel!'
   },
   {
     user: {
       name: 'Charlie Hield',
-      description: 'Senior Creative Technologist',
+      description: 'Tecnólogo creativo senior',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/527849?v=4',
         alt: 'Charlie Hield',
         loading: 'lazy' as const
       }
     },
-    quote: 'NuxtHub is hands down the easiest way to get a project from zero to production on the Cloudflare stack!'
+    quote: 'NuxtHub es, sin duda, la forma más fácil de llevar un proyecto de cero a producción en la plataforma de Cloudflare.'
   },
   {
     user: {
       name: 'Israel Ortuño',
-      description: 'Co-founder of VueJobs',
+      description: 'Cofundador de VueJobs',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/1769417?v=4',
         alt: 'Israel Ortuño',
         loading: 'lazy' as const
       }
     },
-    quote: 'I can\'t find an excuse to not go full-stack with Nuxt from now on. Ship fast the Nuxt way, zero config. Just plug & deploy.'
+    quote: 'No encuentro excusa para no usar Nuxt full-stack a partir de ahora. Envío rápido a la manera de Nuxt, cero configuración. Simplemente conecta y despliega.'
   },
   {
     user: {
       name: 'Fayaz Ahmed',
-      description: 'Indie Hacker',
+      description: 'Hacker independiente',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/15716057?v=4',
         alt: 'Fayaz Ahmed',
         loading: 'lazy' as const
       }
     },
-    quote: 'Took me less than 90 seconds to deploy an app with DB, KV, File storage and Caching, all on the edge with just a single command.'
+    quote: 'Me tomó menos de 90 segundos desplegar una app con BD, KV, almacenamiento de archivos y caché, todo en el edge con un solo comando.'
   },
   {
     user: {
       name: 'Tommy J. Vedvik',
-      description: 'UX Developer',
+      description: 'Desarrollador UX',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/48070?v=4',
         alt: 'Tommy J. Vedvik',
         loading: 'lazy' as const
       }
     },
-    quote: 'Nuxt is becoming the best framework for bootstrappers imo. NuxtHub is a layer on top of Cloudflare services for cheap & fast full-stack edge hosting.'
+    quote: 'Nuxt se está convirtiendo en el mejor framework para bootstrappers en mi opinión. NuxtHub es una capa encima de los servicios de Cloudflare para hosting full-stack en el edge, barato y rápido.'
   },
   {
     user: {
       name: 'Dario Piotrowicz',
-      description: 'Web Developer at Cloudflare',
+      description: 'Desarrollador web en Cloudflare',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/61631103?v=4',
         alt: 'Dario Piotrowicz',
         loading: 'lazy' as const
       }
     },
-    quote: 'I love how NuxtHub combines, amplifies and simplifies the Cloudflare tooling with the wide and mature Nuxt ecosystem. I cannot wait to see how it will evolve and expand in the future!'
+    quote: 'Me encanta cómo NuxtHub combina, amplifica y simplifica las herramientas de Cloudflare con el amplio y maduro ecosistema de Nuxt. ¡No puedo esperar a ver cómo evoluciona y se expande en el futuro!'
   },
   {
     user: {
       name: 'Markus Oberlehner',
-      description: 'Web Developer',
+      description: 'Desarrollador web',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/6883314?v=4',
         alt: 'Markus Oberlehner',
         loading: 'lazy' as const
       }
     },
-    quote: 'Just deployed my first site to Cloudflare using NuxtHub. Very sleek experience!'
+    quote: 'Acabo de desplegar mi primer sitio en Cloudflare usando NuxtHub. ¡Muy fluida la experiencia!'
   },
   {
     user: {
       name: 'Anthony Fu',
-      description: 'Core team Vue.js, Vite & Nuxt',
+      description: 'Equipo central de Vue.js, Vite y Nuxt',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/11247099?v=4',
         alt: 'Anthony Fu',
         loading: 'lazy' as const
       }
     },
-    quote: 'It\'s amazing to be able to run a single command and get existing Nuxt project deployed on edge within minutes! It felt like unlocking the missing infrastructure and UI for Cloudflare, enhancing the developer experience in such an extraordinary way.'
+    quote: 'Es increíble poder ejecutar un solo comando y desplegar un proyecto Nuxt existente en el edge en minutos. Se siente como desbloquear la infraestructura e interfaz que faltaban para Cloudflare, mejorando la experiencia del desarrollador de una manera extraordinaria.'
   },
   {
     user: {
       name: 'Jonathan Beckman',
-      description: 'Founder of GuaranTee Time',
+      description: 'Fundador de GuaranTee Time',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/90707158?v=4',
         alt: 'Jonathan Beckman',
         loading: 'lazy' as const
       }
     },
-    quote: 'NuxtHub and Cloudflare are my go to for full stack apps. The DX is joyous and far superior to any other platform I\'ve used. My team is able to iterate quickly, and build beautiful, performant apps with ease.'
+    quote: 'NuxtHub y Cloudflare son mi elección para aplicaciones full-stack. La experiencia de desarrollador es alegre y muy superior a cualquier otra plataforma que he usado. Mi equipo puede iterar rápidamente y construir apps hermosas y de alto rendimiento con facilidad.'
   },
   {
     user: {
       name: 'Eckhardt Dreyer',
-      description: 'Lead Developer at YG',
+      description: 'Desarrollador principal en YG',
       avatar: {
         src: 'https://avatars.githubusercontent.com/u/37825447?v=4',
         alt: 'Eckhardt Dreyer',
         loading: 'lazy' as const
       }
     },
-    quote: 'At YG, our team recently grew and that meant more seats on all the tools we use. Migrating our hosting workflow to NuxtHub not only took just a few minutes but saved us money from our previous provider. NuxtHub provides an excellent management layer on top of our infrastructure and we\'re super happy about the move!'
+    quote: 'En YG, nuestro equipo creció recientemente y eso significó más licencias en todas las herramientas que usamos. Migrar nuestro flujo de hosting a NuxtHub no solo tomó unos minutos sino que nos ahorró dinero respecto a nuestro proveedor anterior. NuxtHub ofrece una excelente capa de gestión sobre nuestra infraestructura y estamos muy contentos con el cambio.'
   }
 ])
 </script>
@@ -138,9 +138,9 @@ const testimonials = ref([
 <template>
 
 <UPageSection  
-    title="Testimonials"
-    description="Nuxt UI is a collection of essential UI components and utilities for building Nuxt applications. It provides a solid foundation for your projects, allowing you to focus on building unique features and experiences without worrying about the underlying infrastructure."
-    headline="Discover the power of Nuxt UI and its seamless integration with Nuxt's ecosystem of modules and tools, designed to enhance your development experience and help you create stunning applications with ease."
+    title="Testimonios"
+    description="Nuxt UI es una colección de componentes UI esenciales y utilidades para construir aplicaciones Nuxt. Proporciona una base sólida para tus proyectos, permitiéndote centrarte en crear funciones y experiencias únicas sin preocuparte por la infraestructura subyacente."
+    headline="Descubre el poder de Nuxt UI y su integración fluida con el ecosistema de módulos y herramientas de Nuxt, diseñado para mejorar tu experiencia de desarrollo y ayudarte a crear aplicaciones impresionantes con facilidad."
 />
 
   <UPageColumns>
@@ -148,8 +148,8 @@ const testimonials = ref([
       variant="solid"
       to="https://cloudflare.com"
       icon="i-logos-cloudflare-icon"
-      title="Cloudflare's Workers LaunchPad"
-      description="NuxtHub is part of the Cloudflare's Workers Launchpad Cohort to make sure you get a first-class experience on top of Cloudflare's network."
+      title="Workers LaunchPad de Cloudflare"
+      description="NuxtHub forma parte de la cohorte Workers Launchpad de Cloudflare para asegurarte una experiencia de primera clase sobre la red de Cloudflare."
       :ui="{ leadingIcon: 'size-10' }"
     />
 
