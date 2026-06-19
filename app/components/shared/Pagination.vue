@@ -25,7 +25,7 @@ const handlePageUpdate = (page: number) => {
 <template>
   <div class="flex items-center justify-center my-10">
     <UPagination :total="total" :page="currentPage" :per-page="perPage" :items-per-page="perPage" show-edges
-      @update:page="handlePageUpdate" />
+      @update:page="handlePageUpdate" active-color="primary" active-variant="outline" />
     <!-- @update:model-value="router.push({ query: { page: $event.toString() } })" -->
   </div>
 </template>
