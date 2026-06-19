@@ -1,5 +1,3 @@
-import { avatar } from "#build/ui";
-
 export default defineEventHandler( async (event) => {
   const reviews = await prisma.siteReview.findMany({
     take: 10,
@@ -13,8 +11,6 @@ export default defineEventHandler( async (event) => {
       description: true
     }
   });
-
-
 
   return reviews;
 })
