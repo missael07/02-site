@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
   const products = await prisma.product.findMany({
     take: limit,
-    skip: (offset * 10)
+    skip: offset 
   })
 
   const total = await prisma.product.count();
