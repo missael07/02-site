@@ -10,114 +10,82 @@
           Gestiona y organiza tu catálogo de productos
         </p>
       </div>
-      <UButton
-        icon="i-lucide-plus"
-        label="Agregar Producto"
-        color="primary"
-        size="lg"
-      />
+      <UButton icon="i-lucide-plus" label="Agregar Producto" color="primary" size="lg" />
     </div>
 
-    <UTable :data="data" :columns="columns" class="flex-1" />
+    <UTable :data="products" :columns="productColumns" class="flex-1" />
+
+    <SharedPagination :total="total" :model-value="currentPage" :per-page="perPage" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { h, resolveComponent } from 'vue';
 import type { TableColumn } from '@nuxt/ui';
+import { dayMontYearFormat } from '../../../../shared/utils/formatDate';
 const UBadge = resolveComponent('UBadge');
-type Payment = {
-  id: string;
-  date: string;
-  status: 'paid' | 'failed' | 'refunded';
-  email: string;
-  amount: number;
-};
-const data = ref<Payment[]>([
-  {
-    id: '4600',
-    date: '2024-03-11T15:30:00',
-    status: 'paid',
-    email: 'james.anderson@example.com',
-    amount: 594,
-  },
-  {
-    id: '4599',
-    date: '2024-03-11T10:10:00',
-    status: 'failed',
-    email: 'mia.white@example.com',
-    amount: 276,
-  },
-  {
-    id: '4598',
-    date: '2024-03-11T08:50:00',
-    status: 'refunded',
-    email: 'william.brown@example.com',
-    amount: 315,
-  },
-  {
-    id: '4597',
-    date: '2024-03-10T19:45:00',
-    status: 'paid',
-    email: 'emma.davis@example.com',
-    amount: 529,
-  },
-  {
-    id: '4596',
-    date: '2024-03-10T15:55:00',
-    status: 'paid',
-    email: 'ethan.harris@example.com',
-    amount: 639,
-  },
-]);
-const columns: TableColumn<Payment>[] = [
+const UAvatar = resolveComponent('UAvatar');
+
+const { products, currentPage, perPage, total } = await usePaginatedProducts();
+
+const productColumns: TableColumn<Product>[] = [
   {
     accessorKey: 'id',
-    header: '#',
-    cell: ({ row }) => `#${row.getValue('id')}`,
+    header: 'ID',
+    cell: ({ row }) => `# ${row.getValue('id')}`,
   },
   {
-    accessorKey: 'date',
-    header: 'Date',
+    accessorKey: 'images',
+    header: 'Imagen',
     cell: ({ row }) => {
-      return new Date(row.getValue('date')).toLocaleString('en-US', {
-        day: 'numeric',
-        month: 'short',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      });
+      const images: string[] = row.getValue('images');
+      const url = Array.isArray(images) && images.length > 0 ? images[0] : '';
+
+      if (!url) return h('span', { class: 'text-sky-200' }, 'Sin Imagen')
+      return h(UAvatar, { src: url, alt: 'Imagen del producto', class: 'avatar' }, () => images[0])
     },
   },
   {
-    accessorKey: 'status',
-    header: 'Status',
+    accessorKey: 'name',
+    header: 'Nombre',
+    cell: ({ row }) => `${row.getValue('name')}`,
+  },
+  {
+    accessorKey: 'description',
+    header: 'Descripción',
     cell: ({ row }) => {
-      const color = {
-        paid: 'success' as const,
-        failed: 'error' as const,
-        refunded: 'neutral' as const,
-      }[row.getValue('status') as string];
-      return h(UBadge, { class: 'capitalize', variant: 'subtle', color }, () =>
-        row.getValue('status')
-      );
+      return h('div', { class: 'truncate-text', style: 'white-space: normal; word-break: break-word; max-width: 300px' }, String(row.getValue('description')).slice(0, 50) + '...')
     },
   },
   {
-    accessorKey: 'email',
-    header: 'Email',
+    accessorKey: 'price',
+    header: 'Precio',
+    cell: ({ row }) => {
+      const amount = Number.parseFloat(row.getValue('price'));
+      return h('div', { class: 'text-right font-medium' }, formatCurrency(amount));
+    },
   },
   {
-    accessorKey: 'amount',
-    header: () => h('div', { class: 'text-right' }, 'Amount'),
+    accessorKey: 'tags',
+    header: 'Etiquetas',
     cell: ({ row }) => {
-      const amount = Number.parseFloat(row.getValue('amount'));
-      const formatted = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'MXN',
-      }).format(amount);
-      return h('div', { class: 'text-right font-medium' }, formatted);
+      console.log(row.getValue('tags'));
+      const tags: string[] = row.getValue('tags');
+      const badges = tags.map((tag) => {
+        return h(UBadge, { class: 'capitalize mr-2', variant: 'subtle', color: 'primary' }, () =>
+          tag
+        );
+      })
+
+      return badges
     },
+  },
+  {
+    accessorKey: 'createdAt',
+    header: 'Creado',
+    cell: ({ row }) => dayMontYearFormat(row.getValue('createdAt')),
   },
 ];
+
+
 </script>
