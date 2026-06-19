@@ -1,75 +1,197 @@
-# Nuxt Minimal Starter
+# Nuxt 4 - Full Stack Application
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Proyecto desarrollado durante el curso de Nuxt 4 de Fernando Herrera.
 
-## Setup
+![Nuxt](https://img.shields.io/badge/Nuxt-4-00DC82)
+![Vue](https://img.shields.io/badge/Vue-3-42B883)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
 
-Make sure to install dependencies:
+## 📚 Descripción
+
+Aplicación Full Stack construida con Nuxt 4 que implementa:
+
+- Renderizado con Vue 3
+- Server API Routes
+- Prisma ORM
+- PostgreSQL
+- Seeds de base de datos
+- TypeScript
+- Validaciones con Zod
+
+El objetivo del proyecto es aprender la creación de aplicaciones modernas utilizando una única base de código para frontend y backend.
+
+---
+
+## 🚀 Tecnologías
+
+| Tecnología   | Uso                  |
+| ------------ | -------------------- |
+| Nuxt 4       | Framework Full Stack |
+| Vue 3        | UI Framework         |
+| TypeScript   | Tipado estático      |
+| Prisma       | ORM                  |
+| PostgreSQL   | Base de datos        |
+| Zod          | Validaciones         |
+| Tailwind CSS | Estilos              |
+| Nuxt UI      | Componentes UI       |
+
+---
+
+## 📂 Estructura del Proyecto
 
 ```bash
-# npm
+app/
+├── assets/
+├── components/
+├── layouts/
+├── pages/
+└── utils/
+
+server/
+├── api/
+├── utils/
+└── shared/
+
+prisma/
+├── migrations/
+├── generated/
+└── schema.prisma
+
+seed/
+├── seed-database.ts
+└── site-reviews.ts
+```
+
+---
+
+## ⚙️ Variables de Entorno
+
+Crear un archivo `.env`
+
+```env
+DATABASE_URL="postgresql://user:password@host/database"
+```
+
+Puedes utilizar el archivo `.env.template` como referencia.
+
+---
+
+## 📦 Instalación
+
+Clonar repositorio:
+
+```bash
+git clone https://github.com/missael07/02-site.git
+```
+
+Entrar al proyecto:
+
+```bash
+cd 02-site
+```
+
+Instalar dependencias:
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+---
 
-Start the development server on `http://localhost:3000`:
+## 🗄️ Base de Datos
+
+Generar cliente Prisma:
 
 ```bash
-# npm
+npx prisma generate
+```
+
+Aplicar migraciones:
+
+```bash
+npx prisma migrate dev
+```
+
+---
+
+## 🌱 Datos Iniciales
+
+Ejecutar seed:
+
+```bash
+npm run seed
+```
+
+---
+
+## ▶️ Desarrollo
+
+Levantar aplicación:
+
+```bash
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Abrir:
 
-Build the application for production:
+```text
+http://localhost:3000
+```
+
+---
+
+## 🏗️ Producción
+
+Build:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Preview:
 
 ```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+## 📜 Scripts
+
+```bash
+npm run dev
+npm run build
+npm run generate
+npm run preview
+npm run seed
+```
+
+---
+
+## 🎯 Temas Aprendidos
+
+- Routing en Nuxt
+- Layouts
+- Server API Routes
+- Prisma ORM
+- PostgreSQL
+- Validaciones
+- TypeScript
+- Full Stack Development
+- Data Seeding
+- Componentización
+
+---
+
+## 👨‍💻 Autor
+
+Missael Padilla
+
+- GitHub: https://github.com/missael07
+
+---
+
+## 🙏 Créditos
+
+Proyecto desarrollado siguiendo el curso de Nuxt 4 impartido por Fernando Herrera.
