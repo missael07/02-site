@@ -22,7 +22,6 @@
 <script setup lang="ts">
 import { h, resolveComponent } from 'vue';
 import type { TableColumn } from '@nuxt/ui';
-import { dayMontYearFormat } from '../../../../shared/utils/formatDate';
 const UBadge = resolveComponent('UBadge');
 const UAvatar = resolveComponent('UAvatar');
 
