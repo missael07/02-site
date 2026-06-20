@@ -7,7 +7,8 @@ export default defineNuxtRouteMiddleware( async (to, from) => {
   
   console.log('Not Authenticated middleware:', notAuthenticatedRoutes.includes(to.path) && isAuthenticated.value)
   console.log('Not Authenticated middleware:', notAuthenticatedRoutes.includes(to.path) )
-  console.log('Not Authenticated middleware:', to.path )
+  console.log('Not Authenticated middleware from :', from.path )
+  console.log('Not Authenticated middleware to:', to.path )
   console.log('Not Authenticated middleware:', isAuthenticated.value)
 
   if (notAuthenticatedRoutes.includes(to.path) && isAuthenticated.value) {
