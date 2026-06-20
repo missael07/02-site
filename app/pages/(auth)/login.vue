@@ -4,6 +4,7 @@ import type { FormSubmitEvent, AuthFormField } from "@nuxt/ui";
 
 definePageMeta({
   layout: "auth-layout",
+  middleware: 'not-authenticated'
 });
 
 const toast = useToast();
@@ -90,9 +91,7 @@ async function onSubmit(payload: FormSubmitEvent<Schema>) {
     <UPageCard class="w-full max-w-md">
       <UAuthForm :schema="schema" title="Login" description="Enter your credentials to access your account."
         icon="i-lucide-user" :fields="fields" :providers="providers" @submit="onSubmit" :loading="isPosting"
-        :disabled="isPosting" :ui="{
-          leadingIcon: 'text-5xl',
-        }" />
+        :disabled="isPosting" />
     </UPageCard>
 
     <UButton color="primary" variant="ghost" to="/register" label="Don't have an account? Register" />
