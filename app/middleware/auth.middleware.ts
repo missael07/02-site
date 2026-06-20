@@ -5,6 +5,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   await fetch();
   console.log("Auth middleware:", isAuthenticated.value);
 
+  console.log("Auth middleware:", from.path);
   console.log("Auth middleware:", to.path);
   console.log("Auth middleware:", isAuthenticated.value);
   if (!isAuthenticated.value) {
