@@ -4,21 +4,19 @@ import Dashboard from '~/pages/dashboard.vue';
 </script>
 
 <template>
-    <UDashboardGroup 
-        storage="local"
-        storage-key="dashboard-sidebar"
-        :persistent="true"
-    >
-     <DashboardSidebar />
-    
-     <UDashboardPanel>
-        <DashboardNavbar />
+    <ClientOnly>
+        <UDashboardGroup storage="local" storage-key="dashboard-sidebar" :persistent="true">
+            <DashboardSidebar />
 
-        <div class="flex-1 overflow-auto p-6">
-            <slot />
-        </div>
-     </UDashboardPanel>
-    
-    </UDashboardGroup>
+            <UDashboardPanel>
+                <DashboardNavbar />
+
+                <div class="flex-1 overflow-auto p-6">
+                    <slot />
+                </div>
+            </UDashboardPanel>
+
+        </UDashboardGroup>
+    </ClientOnly>
+
 </template>
-
