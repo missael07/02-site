@@ -13,42 +13,45 @@ const bodySchema = z.object({
 });
 
 export default defineEventHandler(async (event) => {
-  const { email, password } = await readValidatedBody(event, bodySchema.parse);
 
-  const user = await prisma.user.findUnique({
-    where: {
-      email,
-    },
-  });
+ return { ok: true, message: 'login endpoint deployed' }
 
-  if (!user)
-    throw createError({
-      status: 401,
-      message: "Credenciales Invalidas",
-    });
+  // const { email, password } = await readValidatedBody(event, bodySchema.parse);
 
-  const isPasswordValid = bcrypt.compareSync(password, user.password);
+  // const user = await prisma.user.findUnique({
+  //   where: {
+  //     email,
+  //   },
+  // });
 
-  if (!isPasswordValid)
-    throw createError({
-      status: 401,
-      message: "Credenciales Invalidas",
-    });
+  // if (!user)
+  //   throw createError({
+  //     status: 401,
+  //     message: "Credenciales Invalidas",
+  //   });
 
-  const userSession = {
-    id: user.id,
-    name: user.name,
-    roles: user.roles,
-    email: user.email,
-  };
+  // const isPasswordValid = bcrypt.compareSync(password, user.password);
 
-  await setUserSession(event, {
-    user: userSession,
-    loggedInAt: new Date()
+  // if (!isPasswordValid)
+  //   throw createError({
+  //     status: 401,
+  //     message: "Credenciales Invalidas",
+  //   });
 
-  });
+  // const userSession = {
+  //   id: user.id,
+  //   name: user.name,
+  //   roles: user.roles,
+  //   email: user.email,
+  // };
 
-  return {
-    user: userSession,
-  };
+  // await setUserSession(event, {
+  //   user: userSession,
+  //   loggedInAt: new Date()
+
+  // });
+
+  // return {
+  //   user: userSession,
+  // };
 });
