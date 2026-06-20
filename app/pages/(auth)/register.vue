@@ -3,7 +3,8 @@ import * as z from 'zod'
 import type { FormSubmitEvent, AuthFormField } from '@nuxt/ui'
 
 definePageMeta({
-  layout: 'auth-layout'
+  layout: 'auth-layout',
+  middleware: 'not-authenticated'
 })
 
 const toast = useToast()
@@ -22,7 +23,7 @@ const fields: AuthFormField[] = [{
   placeholder: 'Enter your email',
   required: true
 }
-, {
+  , {
   name: 'password',
   label: 'Password',
   type: 'password',
@@ -64,25 +65,13 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
 <template>
   <div class="flex flex-col items-center justify-center gap-4 p-4">
     <UPageCard class="w-full max-w-md">
-      <UAuthForm
-        :schema="schema"
-        title="Register"
-        description="Enter your details to create an account."
-        icon="i-lucide-user"
-        :fields="fields"
-        :providers="providers"
-        @submit="onSubmit"
-        :ui="{
-            leadingIcon: 'text-6xl'
-        }"
-      />
+      <UAuthForm :schema="schema" title="Register" description="Enter your details to create an account."
+        icon="i-lucide-user" :fields="fields" :providers="providers" @submit="onSubmit" :ui="{
+          leadingIcon: 'text-6xl'
+        }" />
     </UPageCard>
 
-    <UButton 
-      color="primary" 
-      variant="ghost" 
-      to="/login"
-      label="Do you have an account? Login" />
+    <UButton color="primary" variant="ghost" to="/login" label="Do you have an account? Login" />
   </div>
 </template>
 
