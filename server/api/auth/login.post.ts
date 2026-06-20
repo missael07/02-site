@@ -7,49 +7,49 @@ const bodySchema = z.object({
     .toLowerCase()
     .trim()
     .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
-      message: "Email is not valid",
+      message: 'Email is not valid',
     }),
-  password: z.string().min(8, "Password must be at least 8 characters"),
+  password: z.string().min(8, 'Password must be at least 8 characters'),
 });
 
 export default defineEventHandler(async (event) => {
-
   const { email, password } = await readValidatedBody(event, bodySchema.parse);
 
   const user = await prisma.user.findUnique({
     where: {
-      email,
+      email: email,
     },
   });
 
-  if (!user)
+  if (!user) {
     throw createError({
       status: 401,
-      message: "Credenciales Invalidas",
+      message: 'Bad credentials (email)',
     });
+  }
 
   const isPasswordValid = bcrypt.compareSync(password, user.password);
-
-  if (!isPasswordValid)
-    throw createError({
-      status: 401,
-      message: "Credenciales Invalidas",
-    });
 
   const userSession = {
     id: user.id,
     name: user.name,
-    roles: user.roles,
     email: user.email,
+    roles: user.roles,
   };
 
   await setUserSession(event, {
     user: userSession,
-    loggedInAt: new Date()
-
   });
 
+  if (!isPasswordValid) {
+    throw createError({
+      statusCode: 401,
+      message: 'Bad credentials (password)',
+    });
+  }
+
   return {
+    message: 'Login successful',
     user: userSession,
   };
 });

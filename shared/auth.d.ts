@@ -2,10 +2,10 @@
 declare module '#auth-utils' {
   // Define the structure of your user object
   interface User {
-    id: number;
+    id: string;
     email: string;
-    name: string; // Optional field
-    roles: string[]; // Example of a specific role type
+    name: string;
+    roles: string[];
   }
 
   // Define any additional data you want to store in the session

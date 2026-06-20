@@ -1,11 +1,13 @@
-export default defineNuxtRouteMiddleware( async (to, from) => {
-  const { isAuthenticated, fetch } = useAuthentication();
-  const notAuthenticatedRoutes = ["/login", "/register"];
+export default defineNuxtRouteMiddleware((to, from) => {
+  const { isAuthenticated } = useAuthentication();
 
-  const path = to.path.replace(/\/$/, '')
+  // const notAuthenticatedRoutes = ['/login','/register']
 
-  if (isAuthenticated.value) {
-    console.log('Not Authenticated middleware:', 'redirecciona a home');
-    return navigateTo("/");
+  if (to.path.startsWith('/login') && isAuthenticated.value) {
+    return navigateTo('/');
+  }
+
+  if (to.path.startsWith('/register') && isAuthenticated.value) {
+    return navigateTo('/');
   }
 });

@@ -1,22 +1,13 @@
-<script setup lang="ts">
-import Dashboard from '~/pages/dashboard.vue';
-
-</script>
-
 <template>
-    <ClientOnly>
-        <UDashboardGroup storage="local" storage-key="dashboard-sidebar" :persistent="true">
-            <DashboardSidebar />
+    <UDashboardGroup storage="local" storage-key="dashboard-sidebar" :persistent="true">
+        <DashboardSidebar />
 
-            <UDashboardPanel>
-                <DashboardNavbar />
+        <UDashboardPanel>
+            <DashboardNavbar />
 
-                <div class="flex-1 overflow-auto p-6">
-                    <slot />
-                </div>
-            </UDashboardPanel>
-
-        </UDashboardGroup>
-    </ClientOnly>
-
+            <div class="flex-1 overflow-auto p-6">
+                <slot />
+            </div>
+        </UDashboardPanel>
+    </UDashboardGroup>
 </template>
