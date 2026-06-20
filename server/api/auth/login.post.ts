@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
     });
 
   const userSession = {
-    uid: user.id,
+    id: user.id,
     name: user.name,
     roles: user.roles,
     email: user.email,
@@ -44,6 +44,8 @@ export default defineEventHandler(async (event) => {
 
   await setUserSession(event, {
     user: userSession,
+    loggedInAt: new Date()
+
   });
 
   return {
