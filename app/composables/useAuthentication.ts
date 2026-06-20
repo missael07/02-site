@@ -8,7 +8,7 @@ export const useAuthentication = () => {
         try {
             await $fetch('/api/auth/login', { method: 'POST', body: { email, password } });
             await fetch()
-            navigateTo('/')
+            await navigateTo('/', { replace: true });
             return true;
         } catch (error) {
             return false;
