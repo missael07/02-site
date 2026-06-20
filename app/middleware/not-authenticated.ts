@@ -4,7 +4,7 @@ export default defineNuxtRouteMiddleware( async (to, from) => {
 
   const path = to.path.replace(/\/$/, '')
 
-  if (notAuthenticatedRoutes.includes(path) && isAuthenticated.value) {
+  if (isAuthenticated.value) {
     console.log('Not Authenticated middleware:', 'redirecciona a home');
     return navigateTo("/");
   }
