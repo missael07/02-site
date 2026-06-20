@@ -40,8 +40,7 @@ export default defineNuxtConfig({
       ],
       ignore: [
         '/dashboard',
-        '/dashboard/**',
-        '/login'
+        '/dashboard/**'
       ],
       crawlLinks: true,
     }
