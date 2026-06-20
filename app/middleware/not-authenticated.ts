@@ -6,6 +6,8 @@ export default defineNuxtRouteMiddleware( async (to, from) => {
   console.log('guest middleware:', isAuthenticated.value)
   
   console.log(notAuthenticatedRoutes.includes(to.path) && isAuthenticated.value)
+  console.log(notAuthenticatedRoutes.includes(to.path) )
+  console.log(isAuthenticated.value)
 
   if (notAuthenticatedRoutes.includes(to.path) && isAuthenticated.value) {
     console.log('redirecciona a home');
