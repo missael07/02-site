@@ -9,7 +9,7 @@ export const useAuthentication = () => {
       });
 
       await fetch();
-      navigateTo('/?message=Login successful');
+      await navigateTo('/', {replace: true});
 
       return true;
     } catch (error) {
@@ -30,7 +30,7 @@ export const useAuthentication = () => {
 
   const logout = async () => {
     await clear();
-    navigateTo('/?message=Logout successful');
+    navigateTo('/');
   };
 
   return {
