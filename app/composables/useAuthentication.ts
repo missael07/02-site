@@ -11,6 +11,7 @@ export const useAuthentication = () => {
             navigateTo('/')
             return true;
         } catch (error) {
+            console.log(error)
             return false;
         }
     } 
@@ -21,6 +22,7 @@ export const useAuthentication = () => {
             navigateTo('/')
             return true;
         } catch (error) {
+            console.log(error)
             return false;
         }
     }
