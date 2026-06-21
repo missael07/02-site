@@ -39,10 +39,12 @@ export default defineNuxtConfig({
         '/', '/about', '/contact', '/products', '/pricing', 
       ],
       ignore: [
-        '/dashboard',
-        '/dashboard/**'
+          '/login',
+          '/register',
+          '/dashboard',
+          '/dashboard/**'
       ],
-      crawlLinks: true,
+      crawlLinks: false,
     }
   }
 

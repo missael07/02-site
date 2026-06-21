@@ -30,6 +30,7 @@ export const useAuthentication = () => {
 
   const logout = async () => {
     await clear();
+    console.log(123)
     navigateTo('/');
   };
 

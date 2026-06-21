@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type {
-   CommandPaletteGroup,
+  CommandPaletteGroup,
   CommandPaletteItem,
-   NavigationMenuItem,
+  NavigationMenuItem,
 } from '@nuxt/ui';
 const items: NavigationMenuItem[][] = [
   [
@@ -70,17 +70,16 @@ const searchGroups = ref<CommandPaletteGroup<CommandPaletteItem>[]>([
     ],
   },
 ]);
+
+const { user } = useAuthentication();
+
 </script>
 
 <template>
-  <UDashboardSidebar
-    collapsible
-    resizable
-    :ui="{ footer: 'border-t border-default' }"
-  >
+  <UDashboardSidebar collapsible resizable :ui="{ footer: 'border-t border-default' }">
     <template #header="{ collapsed }" class="flex items-center gap-2">
       <UDashboardSidebarCollapse variant="subtle" />
-      <IconsNuxtui class="h-6 w-auto" v-if="!collapsed" />
+      <IconsNuxtui class="h-6 w-auto cursor-pointer" v-if="!collapsed" @click="navigateTo('/')" />
     </template>
 
     <template #default="{ collapsed }">
@@ -100,43 +99,23 @@ const searchGroups = ref<CommandPaletteGroup<CommandPaletteItem>[]>([
             <UKbd value="K" variant="subtle" />
           </div>
         </template>
-      </UButton> -->
+</UButton> -->
 
-      <UNavigationMenu
-        :collapsed="collapsed"
-        :items="items[0]"
-        orientation="vertical"
-      />
+      <UNavigationMenu :collapsed="collapsed" :items="items[0]" orientation="vertical" />
 
-      <UNavigationMenu
-        :collapsed="collapsed"
-        :items="items[1]"
-        orientation="vertical"
-        class="mt-auto"
-      />
+      <UNavigationMenu :collapsed="collapsed" :items="items[1]" orientation="vertical" class="mt-auto" />
 
       <div class="">
-        <UDashboardSidebarCollapse
-          color="neutral"
-          variant="ghost"
-          square
-          class="w-full"
-          :title="collapsed ? 'Expandir' : 'Contraer'"
-        />
+        <UDashboardSidebarCollapse color="neutral" variant="ghost" square class="w-full"
+          :title="collapsed ? 'Expandir' : 'Contraer'" />
       </div>
     </template>
 
     <template #footer="{ collapsed }">
-      <UButton
-        :avatar="{
-          src: 'https://github.com/benjamincanac.png',
-        }"
-        :label="collapsed ? undefined : 'Benjamin'"
-        color="neutral"
-        variant="ghost"
-        class="w-full"
-        :block="collapsed"
-      />
+      <UButton :avatar="{
+        src: 'https://github.com/benjamincanac.png',
+      }" :label="collapsed ? undefined : user?.name" color="neutral" variant="ghost" class="w-full"
+        :block="collapsed" />
     </template>
   </UDashboardSidebar>
 </template>
